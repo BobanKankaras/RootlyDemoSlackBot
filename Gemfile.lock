@@ -220,6 +220,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.2-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
+      racc (~> 1.4)
     otr-activerecord (2.1.2)
       activerecord (>= 4.0, < 7.1)
       hashie-forbidden_attributes (~> 0.1)
@@ -228,6 +230,7 @@ GEM
     pagy_cursor (0.5.0)
       activerecord (>= 5)
       pagy (>= 5, < 6)
+    pg (1.4.6)
     pg (1.4.6-x64-mingw-ucrt)
     popper_js (2.11.6)
     public_suffix (5.0.1)
@@ -381,6 +384,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   activerecord
