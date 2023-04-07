@@ -18,24 +18,16 @@ development:
   database: rootlydemobot
   password: pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI
 
-test:
-  <<: *default
-  # url: https://1ca6-194-33-45-162.ngrok-free.app
-  url: <%= ENV['DATABASE_URL'] %>
-  username: postgres
-  database: rootlydemobot
-  password: Test1234
-
 production:
   <<: *default
+  host: dpg-cgntdv8rddl9mmo4b0b0-a.oregon-postgres.render.com
+  username: admin
+  database: rootlydemobot
+  password: pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI
+
+test:
+  <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   username: postgres
   database: rootlydemobot
   password: Test1234
-
-# production:
-#   url: postgres://admin:pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI@dpg-cgntdv8rddl9mmo4b0b0-a/rootlydemobot
-#   # url: postgres://admin:pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI@dpg-cgntdv8rddl9mmo4b0b0-a.oregon-postgres.render.com/rootlydemobot
-#   username: admin
-#   database: rootlydemobot
-#   password: pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI
