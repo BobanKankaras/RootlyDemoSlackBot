@@ -219,6 +219,7 @@ class SlackCommandsController < ApplicationController
       user_id = params[:user_id]
   
       case command
+      # Handle the "/rootly" command
       when "/rootly"
         case text
         when 'declare'
@@ -228,6 +229,18 @@ class SlackCommandsController < ApplicationController
         else
             message = "/rootly called but no context for in this case!"
         end
+
+      # /ping testing for local development
+      when "/ping"
+        case text
+        when 'declare'
+            open_new_incident_modal(trigger_id)
+        when 'resolve'
+            message = resolve_incident(params, client)
+        else
+            message = "/rootly called but no context for in this case!"
+        end
+      
       else
         message = "Unknown command"
       end
