@@ -3,16 +3,24 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# development:
+#   <<: *default
+#   # url: https://1ca6-194-33-45-162.ngrok-free.app
+#   url: <%= ENV['DATABASE_URL'] %>
+#   username: postgres
+#   database: rootlydemobot
+#   password: Test1234
+
 development:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  username: postgres
+  host: dpg-cgntdv8rddl9mmo4b0b0-a.oregon-postgres.render.com
+  username: admin
   database: rootlydemobot
-  password: Test1234
-
+  password: pE3TH5XvijZ1gTfFBc3pd6IMHEnC8MBI
 
 test:
   <<: *default
+  # url: https://1ca6-194-33-45-162.ngrok-free.app
   url: <%= ENV['DATABASE_URL'] %>
   username: postgres
   database: rootlydemobot

@@ -10,20 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_07_042529) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_07_222259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "incident_list", id: :uuid, default: nil, force: :cascade do |t|
-    t.string "title", limit: 100, null: false
-    t.string "description", limit: 1000
-    t.string "severity", limit: 5
-    t.string "created_by", limit: 36, null: false
-    t.timestamptz "created_at", null: false
-    t.integer "resolved", default: 0, null: false
-    t.string "resolved_by", limit: 36
-    t.timestamptz "resolved_at"
-  end
 
   create_table "incidents", force: :cascade do |t|
     t.string "title"
@@ -32,16 +21,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_07_042529) do
     t.string "created_by"
     t.integer "resolved"
     t.string "resolved_by"
-    t.datetime "resolved_at"
+    t.datetime "resolved_at", precision: nil
+    t.string "channel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "channel_id"
-  end
-
-  create_table "users", id: :uuid, default: nil, force: :cascade do |t|
-    t.string "name", limit: 100, null: false
-    t.string "email", limit: 100, null: false
-    t.string "password", limit: 100
   end
 
 end

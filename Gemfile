@@ -12,12 +12,11 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
-gem "bootstrap-sass"
 gem "bootstrap"
-gem "sass-rails"
 
 gem 'irb'
 gem 'pg'
+gem 'dotenv'
 gem 'newrelic-slack-ruby-bot'
 gem 'slack-ruby-bot-server', '>= 1.1.0'
 gem 'slack-ruby-bot-server-events'
