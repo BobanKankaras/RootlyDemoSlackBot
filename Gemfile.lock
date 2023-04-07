@@ -1,0 +1,426 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actioncable (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      nio4r (~> 2.0)
+      websocket-driver (>= 0.6.1)
+    actionmailbox (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      activejob (= 7.0.4.3)
+      activerecord (= 7.0.4.3)
+      activestorage (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      mail (>= 2.7.1)
+      net-imap
+      net-pop
+      net-smtp
+    actionmailer (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      actionview (= 7.0.4.3)
+      activejob (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      mail (~> 2.5, >= 2.5.4)
+      net-imap
+      net-pop
+      net-smtp
+      rails-dom-testing (~> 2.0)
+    actionpack (7.0.4.3)
+      actionview (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      rack (~> 2.0, >= 2.2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.2.0)
+    actiontext (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      activerecord (= 7.0.4.3)
+      activestorage (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      globalid (>= 0.6.0)
+      nokogiri (>= 1.8.5)
+    actionview (7.0.4.3)
+      activesupport (= 7.0.4.3)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    activejob (7.0.4.3)
+      activesupport (= 7.0.4.3)
+      globalid (>= 0.3.6)
+    activemodel (7.0.4.3)
+      activesupport (= 7.0.4.3)
+    activerecord (7.0.4.3)
+      activemodel (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+    activestorage (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      activejob (= 7.0.4.3)
+      activerecord (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      marcel (~> 1.0)
+      mini_mime (>= 1.1.0)
+    activesupport (7.0.4.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    addressable (2.8.3)
+      public_suffix (>= 2.0.2, < 6.0)
+    async (2.5.0)
+      console (~> 1.10)
+      io-event (~> 1.1)
+      timers (~> 4.1)
+    autoprefixer-rails (10.4.13.0)
+      execjs (~> 2)
+    bindex (0.8.1)
+    bootsnap (1.16.0)
+      msgpack (~> 1.2)
+    bootstrap (5.2.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.6, < 3)
+      sassc-rails (>= 2.0.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
+    bson (4.15.0)
+    builder (3.2.4)
+    capybara (3.39.0)
+      addressable
+      matrix
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (>= 1.5, < 3.0)
+      xpath (~> 3.2)
+    concurrent-ruby (1.2.2)
+    console (1.16.2)
+      fiber-local
+    crack (0.4.5)
+      rexml
+    crass (1.0.6)
+    database_cleaner-core (2.0.1)
+    database_cleaner-mongoid (2.0.1)
+      database_cleaner-core (~> 2.0.0)
+      mongoid
+    date (3.3.3)
+    debug (1.7.2)
+      irb (>= 1.5.0)
+      reline (>= 0.3.1)
+    declarative (0.0.20)
+    diff-lcs (1.5.0)
+    dry-core (1.0.0)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
+    erubi (1.12.0)
+    execjs (2.8.1)
+    fabrication (2.30.0)
+    faker (3.1.1)
+      i18n (>= 1.8.11, < 2)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-mashify (0.1.1)
+      faraday (~> 2.0)
+      hashie
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
+    ffi (1.15.5)
+    fiber-local (1.0.0)
+    foreman (0.87.2)
+    gli (2.21.0)
+    globalid (1.1.0)
+      activesupport (>= 5.0)
+    grape (1.7.0)
+      activesupport
+      builder
+      dry-types (>= 1.1)
+      mustermann-grape (~> 1.0.0)
+      rack (>= 1.3.0)
+      rack-accept
+    grape-roar (0.4.1)
+      grape
+      multi_json
+      roar (~> 1.1.0)
+    grape-swagger (1.6.0)
+      grape (~> 1.3)
+    hashdiff (1.0.1)
+    hashie (5.0.0)
+    hashie-forbidden_attributes (0.1.1)
+      hashie (>= 3.0)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    importmap-rails (1.1.5)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
+    io-console (0.6.0)
+    io-event (1.1.7)
+    irb (1.6.3)
+      reline (>= 0.3.0)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
+    kaminari-core (1.2.2)
+    kaminari-grape (1.0.1)
+      grape
+      kaminari-core (~> 1.0)
+    loofah (2.20.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    mail (2.8.1)
+      mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
+    marcel (1.0.2)
+    matrix (0.4.2)
+    method_source (1.0.0)
+    mini_mime (1.1.2)
+    minitest (5.18.0)
+    mongo (2.18.2)
+      bson (>= 4.14.1, < 5.0.0)
+    mongoid (8.0.3)
+      activemodel (>= 5.1, < 7.1, != 7.0.0)
+      mongo (>= 2.18.0, < 3.0.0)
+      ruby2_keywords (~> 0.0.5)
+    msgpack (1.7.0)
+    multi_json (1.15.0)
+    multipart-post (2.3.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
+    mustermann-grape (1.0.2)
+      mustermann (>= 1.0.0)
+    net-imap (0.3.4)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.1)
+      timeout
+    net-smtp (0.3.3)
+      net-protocol
+    newrelic-slack-ruby-bot (0.2.2)
+      newrelic_rpm
+      slack-ruby-bot (>= 0.10.5)
+    newrelic_rpm (9.1.0)
+    nio4r (2.5.9)
+    nokogiri (1.14.2-x64-mingw-ucrt)
+      racc (~> 1.4)
+    otr-activerecord (2.1.2)
+      activerecord (>= 4.0, < 7.1)
+      hashie-forbidden_attributes (~> 0.1)
+    pagy (5.10.1)
+      activesupport
+    pagy_cursor (0.5.0)
+      activerecord (>= 5)
+      pagy (>= 5, < 6)
+    pg (1.4.6-x64-mingw-ucrt)
+    popper_js (2.11.6)
+    public_suffix (5.0.1)
+    puma (5.6.5)
+      nio4r (~> 2.0)
+    racc (1.6.2)
+    rack (2.2.6.4)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
+    rack-rewrite (1.5.1)
+    rack-server-pages (0.1.0)
+      rack
+    rack-test (2.1.0)
+      rack (>= 1.3)
+    rails (7.0.4.3)
+      actioncable (= 7.0.4.3)
+      actionmailbox (= 7.0.4.3)
+      actionmailer (= 7.0.4.3)
+      actionpack (= 7.0.4.3)
+      actiontext (= 7.0.4.3)
+      actionview (= 7.0.4.3)
+      activejob (= 7.0.4.3)
+      activemodel (= 7.0.4.3)
+      activerecord (= 7.0.4.3)
+      activestorage (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      bundler (>= 1.15.0)
+      railties (= 7.0.4.3)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.5.0)
+      loofah (~> 2.19, >= 2.19.1)
+    railties (7.0.4.3)
+      actionpack (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+      method_source
+      rake (>= 12.2)
+      thor (~> 1.0)
+      zeitwerk (~> 2.5)
+    rake (13.0.6)
+    regexp_parser (2.7.0)
+    reline (0.3.3)
+      io-console (~> 0.5)
+    representable (3.2.0)
+      declarative (< 0.1.0)
+      trailblazer-option (>= 0.1.1, < 0.2.0)
+      uber (< 0.2.0)
+    rexml (3.2.5)
+    roar (1.1.1)
+      representable (~> 3.0)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.1)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
+    ruby2_keywords (0.0.5)
+    rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
+    selenium-webdriver (4.8.6)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
+    slack-ruby-bot (0.16.1)
+      activesupport
+      hashie
+      slack-ruby-client (>= 0.14.0)
+    slack-ruby-bot-server (2.1.0)
+      async
+      foreman
+      grape
+      grape-roar (>= 0.4.0)
+      grape-swagger
+      kaminari-grape
+      rack-cors
+      rack-rewrite
+      rack-server-pages
+      slack-ruby-client
+    slack-ruby-bot-server-events (0.3.2)
+      slack-ruby-bot-server (>= 0.12.0)
+    slack-ruby-client (2.1.0)
+      faraday (>= 2.0)
+      faraday-mashify
+      faraday-multipart
+      gli
+      hashie
+    sprockets (4.2.0)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      sprockets (>= 3.0.0)
+    stimulus-rails (1.2.1)
+      railties (>= 6.0.0)
+    thor (1.2.1)
+    tilt (2.1.0)
+    timeout (0.3.2)
+    timers (4.3.5)
+    trailblazer-option (0.1.2)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
+    uber (0.1.0)
+    vcr (6.1.0)
+    web-console (4.2.0)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
+      bindex (>= 0.4.0)
+      railties (>= 6.0.0)
+    webdrivers (5.2.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (~> 4.0)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+    webrick (1.8.1)
+    websocket (1.2.9)
+    websocket-driver (0.7.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.5)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
+    zeitwerk (2.6.7)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  activerecord
+  bootsnap
+  bootstrap
+  bootstrap-sass
+  capybara
+  database_cleaner-mongoid
+  debug
+  fabrication
+  faker
+  importmap-rails
+  irb
+  jbuilder
+  newrelic-slack-ruby-bot
+  otr-activerecord
+  pagy_cursor
+  pg
+  puma (~> 5.0)
+  rack-test
+  rails (~> 7.0.4, >= 7.0.4.3)
+  rake
+  rspec
+  sass-rails
+  selenium-webdriver
+  slack-ruby-bot-server (>= 1.1.0)
+  slack-ruby-bot-server-events
+  slack-ruby-client
+  sprockets-rails
+  stimulus-rails
+  turbo-rails
+  tzinfo-data
+  vcr
+  web-console
+  webdrivers
+  webmock
+  webrick
+
+RUBY VERSION
+   ruby 3.2.2p53
+
+BUNDLED WITH
+   2.4.10

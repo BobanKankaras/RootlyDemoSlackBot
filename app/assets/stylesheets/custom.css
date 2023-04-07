@@ -1,0 +1,28 @@
+.table thead th {
+    border-top: none;
+  }
+  
+  .badge {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 6px 8px;
+    border-radius: 20px;
+  }
+  
+  .badge.bg-sev0 {
+    background-color: #00ff00 ;
+  }
+
+  .badge.bg-sev1 {
+    background-color: #80ff00  ;
+  }
+
+  .badge.bg-sev2 {
+    background-color: #ff8000  ;
+  }
+
+  .badge.bg-sev3 {
+    background-color: #ff0000 ;
+  }
+  
