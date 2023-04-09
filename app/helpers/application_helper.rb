@@ -1,11 +1,10 @@
 module ApplicationHelper
     # Check command is declared
-    def check_declare_format(str)
-        if str.start_with?('declare') && str.length > 'declare'.length
-          return str['declare '.length..-1]
-        else
-          return str
-        end
+    def check_declare_format(input_string)
+      parts = input_string.split(' ', 2)
+      command = parts[0]
+      argument = parts.length > 1 ? parts[1] : ''
+      [command, argument]
     end
 
 end

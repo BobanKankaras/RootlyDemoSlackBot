@@ -24,9 +24,9 @@ class SlackCommandsController < ApplicationController
       case command
       # Handle the "/rootly" command
       when "/rootly"
-        case text
+        case text[0]
         when 'declare'
-            open_new_incident_modal(client, trigger_id)
+            open_new_incident_modal(client, trigger_id, text[1])
         when 'resolve'
             message = resolve_incident(params, client)
         else
