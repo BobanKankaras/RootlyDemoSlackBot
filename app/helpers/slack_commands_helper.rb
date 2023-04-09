@@ -23,33 +23,36 @@ module SlackCommandsHelper
             element: {
                 type: 'plain_text_input',
                 action_id: 'incident_title',
+                initial_value: title,
                 placeholder: {
                 type: 'plain_text',
-                text: 'customers-001 database down'
-                }
+                text: 'Title of the incident'
+                },
             },
             label: {
                 type: 'plain_text',
-                text: 'Title (optional)'
+                text: 'Title'
             }
             },
             {
             type: 'input',
+            optional: true,
             element: {
                 type: 'plain_text_input',
                 action_id: 'incident_description',
                 placeholder: {
                 type: 'plain_text',
-                text: 'Briefly describe the impact of the incident'
+                text: 'Description of the incident'
                 }
             },
             label: {
                 type: 'plain_text',
-                text: 'Summary (optional)'
+                text: 'Summary'
             }
             },
             {
             type: 'input',
+            optional: true,
             element: {
                 type: 'static_select',
                 action_id: 'incident_severity',
@@ -90,17 +93,20 @@ module SlackCommandsHelper
             },
             label: {
                 type: 'plain_text',
-                text: 'Severity (optional)'
+                text: 'Severity'
             }
             }
         ],
         }
 
-        response = client.views_open(
-        trigger_id: trigger_id,
-        view: view
-        )
-
+        begin
+            response = client.views_open(
+                trigger_id: trigger_id,
+                view: view
+                )    
+        rescue Slack::Web::Api::Errors::ExpiredTriggerId => e
+            # open_new_incident_modal(client, trigger_id, title)
+        end
     end
 
     # Resolve incident

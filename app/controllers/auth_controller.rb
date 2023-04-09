@@ -20,7 +20,9 @@ class AuthController < ApplicationController
 
         user_id = response['authed_user']['id']
         user_token = response['access_token']
-        save_token(user_id, user_token)
+        user_refresh_token = response['refresh_token']
+
+        save_token(user_id, user_token, user_refresh_token)
       end
       redirect_to root_path
     end

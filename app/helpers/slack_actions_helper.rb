@@ -2,9 +2,14 @@ module SlackActionsHelper
 
    # Create incident
    def create_incident(payload, client)
-    title ||= payload['view']['state']['values'][payload['view']['blocks'][0]['block_id']]['incident_title']['value']
-    description ||= payload['view']['state']['values'][payload['view']['blocks'][1]['block_id']]['incident_description']['value']
-    severity ||= payload['view']['state']['values'][payload['view']['blocks'][2]['block_id']]['incident_severity']['selected_option']['text']['text']
+
+    title = payload.dig('view', 'state', 'values', payload['view']['blocks'][0]['block_id'], 'incident_title', 'value')&.strip || ''
+    description = payload.dig('view', 'state', 'values', payload['view']['blocks'][1]['block_id'], 'incident_description', 'value')&.strip || ''
+    severity = payload.dig('view', 'state', 'values', payload['view']['blocks'][2]['block_id'], 'incident_severity', 'selected_option', 'text', 'text')&.strip || ''
+
+    puts 'title: ' + title
+    puts 'description: ' + description
+    puts 'severity: ' + severity
 
     user_name = payload['user']['username']
     user_id = payload['user']['id']

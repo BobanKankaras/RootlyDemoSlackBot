@@ -8,13 +8,9 @@ class SlackCommandsController < ApplicationController
      def slash_command
       user_id = params[:user_id]
       user_token = get_user_token(user_id)
-      # puts 'user_token: ' + user_token
-      # token = params[:token]
-      # puts 'token(slash_command): ' + token
-
       client = Slack::Web::Client.new(token: user_token)
       command = params[:command]
-      text = check_declare_format(params[:text])
+      text, title = check_declare_format(params[:text])
       trigger_id = params[:trigger_id]
       user_name = params[:user_name]
       user_id = params[:user_id]
@@ -24,9 +20,11 @@ class SlackCommandsController < ApplicationController
       case command
       # Handle the "/rootly" command
       when "/rootly"
-        case text[0]
+        case text
         when 'declare'
-            open_new_incident_modal(client, trigger_id, text[1])
+            puts 'declared: ' + title
+            open_new_incident_modal(client, trigger_id, title)
+            puts 'opened modal'
         when 'resolve'
             message = resolve_incident(params, client)
         else
@@ -35,9 +33,9 @@ class SlackCommandsController < ApplicationController
 
       # /ping testing for local development
       when "/ping"
-        case text
+        case text[0]
         when 'declare'
-            open_new_incident_modal(client, trigger_id)
+            open_new_incident_modal(client, trigger_id, title)
         when 'resolve'
             message = resolve_incident(params, client)
         else
