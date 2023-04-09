@@ -19,6 +19,7 @@
                         <p class="text-light p-2 <%= incident.resolved == 0 ? "bg-primary" : "bg-success" %> h5 rounded">
                             <%= incident.resolved == 0 ? "Opened" : "Resolved" %>
                         </p>
+                        <%# <%= link_to "Delete", pages_path(incident), method: :delete, data: { confirm: "Are you sure?" } %>
                     </div>
                 </div>
             </div>

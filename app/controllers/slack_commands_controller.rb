@@ -26,7 +26,7 @@ class SlackCommandsController < ApplicationController
       when "/rootly"
         case text
         when 'declare'
-            open_new_incident_modal(trigger_id)
+            open_new_incident_modal(client, trigger_id)
         when 'resolve'
             message = resolve_incident(params, client)
         else
@@ -37,7 +37,7 @@ class SlackCommandsController < ApplicationController
       when "/ping"
         case text
         when 'declare'
-            open_new_incident_modal(trigger_id)
+            open_new_incident_modal(client, trigger_id)
         when 'resolve'
             message = resolve_incident(params, client)
         else

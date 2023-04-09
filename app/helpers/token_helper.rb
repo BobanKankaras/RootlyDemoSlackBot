@@ -14,11 +14,16 @@ module TokenHelper
     end
 
     def get_user_token(user_id)
+        all_user = User.all
         user = User.where(user_id: user_id).first
+        puts 'All users: ' + all_user.to_s
+        puts 'User: ' + user.to_s
         if user.nil?
-            return user.token
-        else
+            puts 'User token is nil so returning ENV bot token'
             return ENV['SLACK_BOT_TOKEN']
+        else
+            puts 'User token is not nil so returning user token'
+            return user.token
         end
     end
     

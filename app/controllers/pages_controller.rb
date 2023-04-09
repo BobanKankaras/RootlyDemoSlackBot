@@ -1,41 +1,53 @@
-require 'pg'
-
 class PagesController < ApplicationController
-
-    # db_url = 'postgres://postgres:Test1234@1ca6-194-33-45-162.ngrok-free.app/rootlydemobot'
-    # db_url = 'postgres://postgres:Test1234@localhost:5432/rootlydemobot'
-    
-    # puts "PostgreSQL database URL: #{db_url}"
-
-    # db = PG.connect(db_url)
-    # table_name = "incidents"
-    # result = db.exec("SELECT to_regclass('#{table_name}')")
-
-    # if result[0]["to_regclass"] == nil
-    #     db.create_table :incidents do |t|
-    #       t.string "title"
-    #       t.string "description"
-    #       t.string "severity"
-    #       t.string "created_by"
-    #       t.integer "resolved"
-    #       t.string "resolved_by"
-    #       t.datetime "resolved_at"
-    #       t.string "channel_id"
-    #     end
-    # else
-    #     result = db.exec("SELECT * FROM incidents")
-    # end
-      
-    # # Print the result
-    # result.each do |row|
-    #     puts row['title']
-    # end
-
-    # # Close the database connection
-    # db.close
 
     def index
         @incidents = Incident.all
     end
-
+    
+    def show
+        @incident = Incident.find(params[:id])
+    end
+    
+    def new
+        @incident = Incident.new
+    end
+    
+    def create
+        @incident = Incident.new(incident_params)
+    
+        if @incident.save
+        redirect_to @incident, notice: 'Incident was successfully created.'
+        else
+        render :new
+        end
+    end
+    
+    def edit
+        @incident = Incident.find(params[:id])
+    end
+    
+    def update
+        @incident = Incident.find(params[:id])
+    
+        if @incident.update(incident_params)
+        redirect_to @incident, notice: 'Incident was successfully updated.'
+        else
+        render :edit
+        end
+    end
+    
+    def destroy
+        puts 'params: ' + params.to_s
+        @incident = Incident.find(params[:id])
+        @incident.destroy
+    
+        redirect_to incidents_url, notice: 'Incident was successfully destroyed.'
+    end
+    
+    private
+    
+    def incident_params
+        params.require(:incident).permit(:title, :description, :status)
+    end
 end
+      
