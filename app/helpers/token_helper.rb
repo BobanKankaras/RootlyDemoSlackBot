@@ -30,7 +30,9 @@ module TokenHelper
             rescue => exception
                 puts 'Exception: ' + exception.to_s
                 puts 'User token is expired so getting new bot token'
-                return get_new_bot_token(user.refresh_token)
+                new_token = get_new_bot_token(user.refresh_token)
+                save_token(user_id, new_token, user.refresh_token)
+                return new_token
             end
             puts 'User token is not nil so returning user token'
             return user.token
