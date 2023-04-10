@@ -18,12 +18,15 @@
 ## Step1. Create a new Slack App
 
 - Go to https://api.slack.com/apps and click on "Create New App".
+![](Readme_image/step1_1.png)
 - Give the app a name and select the workspace where you want to install the app.
 - In the "Add features and functionality" section, click on "Slash Commands" and create two new commands with the following settings:
     - Command: `/rootly`
     - Request URL: https://your-app-domain.com/api/slack/command
     - Short Description: Declare/Resolve a new incident
+    ![](Readme_image/step1_2.png)
 - In the `Interactivety & Shortcuts`, set the `Request URL` as to like this `https://rootly-demo-incident.onrender.com/api/slack/action`
+    ![](Readme_image/step1_21.png)
 - In the "Basic Information" section in the Settings tab in Left nav, you can show `Client ID`, `Client Secret`, `Signing Secret` in the "App Credentials". This will be used to getting `bot token` and on the `App auth flow`.
 ### Simply you can set environments with `App Manifest`
 
@@ -54,18 +57,7 @@ Open the "App mainfests" in the Left nav, then past this code. After paste this 
             "https://your-domain.com/api/auth/"
         ],
         "scopes": {
-            "user": [
-                "admin",
-                "channels:read",
-                "channels:write",
-                "chat:write",
-                "groups:read",
-                "groups:write",
-                "users:read",
-                "users:write"
-            ],
             "bot": [
-                "app_mentions:read",
                 "channels:manage",
                 "channels:read",
                 "chat:write",
@@ -88,18 +80,16 @@ Open the "App mainfests" in the Left nav, then past this code. After paste this 
     }
 }
 ```
+
+![](Readme_image/step1_3.png)
 - After installed all of the evironment you can install this app to your workspace to local testing.
 - If you want this app to install to other workspace you should use "Share Your APP with Any Workspace" on the "Manage Distribution" in the Left nav. 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40a85723-44b1-4db8-84f8-93e03bf09e4d/Screen_Shot_2021-05-06_at_10.58.43_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40a85723-44b1-4db8-84f8-93e03bf09e4d/Screen_Shot_2021-05-06_at_10.58.43_AM.png)
-
-
-
+![](Readme_image/step1_4.png)
 
 ## Step2. Create a new Rails app and setup the environment
 
 ### Open a terminal and run the following command to create as new Rails app
-
-    `rails new RootlyDemoBot`
+    rails new RootlyDemoBot --database=postgresql
 ### Bundle install
 - Open the `Gemfile` in your text editor and add the following gems:
 
@@ -141,6 +131,9 @@ SLACK_VERIFICATION_TOKEN=<YOUR-APP-VERIFICATION-TOKEN>
 SLACK_BOT_TOKEN=<YOUR-APP-BOT-TOKEN>
 ```
 - You can get this values from "Basic Information" on your Slack app project.
+![](Readme_image/step2_1.png)
+
+
 
 ### Database Setting & migration
 - Open the `database.yml` file and then edit the some values
@@ -476,10 +469,7 @@ root to: "pages#index"
  ```
 
 - Open the `app\views\pages\index.html.erb` file and we can make a simple WEB_UI for showing the all the incidents list
-
-
-
-
+![](Readme_image/step5_1.png)
 
 ## Step6. Local testing using `ngrok`
 - Run the project
@@ -493,12 +483,12 @@ ngrok http 5000
 In this project we used `5000` port.
 
 - Copy `forwarding` url on the `ngrok` terminal
-e.g_`https://93d3-194-33-45-162.ngrok-free.app`
+e.g_`https://93d3-xxx-33-45-162.ngrok-free.app`
 
 - Go to the your app then open the "App manifest"
 In here you can replace `your-doman.com` to the copied url.
 
-- Open the new browser and then go the to front-end page `https://93d3-194-33-45-162.ngrok-free.app`, then tap the `Add to Slack` button and add the bot to the your space.
+- Open the new browser and then go the to front-end page `https://93d3-xxx-33-45-162.ngrok-free.app`, then tap the `Add to Slack` button and add the bot to the your space.
 If you open your slack workspace and then can see the bot is added in your workspace.
 
 - Finally, you can testing the app's features
@@ -506,6 +496,8 @@ If you open your slack workspace and then can see the bot is added in your works
     - and if you click `create` button, the new channel is created.
     - and if you input `\rootly resolve`, then the channel is closed.
     - if you open front-end (just input your domain to the brower), you can see all of the incident lists.
+![](Readme_image/Animation.gif)
+
 
 
 # Thank you
